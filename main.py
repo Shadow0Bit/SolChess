@@ -1,0 +1,3 @@
+import Figury
+
+Figury.moves()
