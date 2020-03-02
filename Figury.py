@@ -1,4 +1,4 @@
-from Board import *
+from SolChess.Board import *
 
 
 def moves():
