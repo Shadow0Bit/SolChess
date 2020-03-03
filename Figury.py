@@ -230,4 +230,69 @@ def rook():
 
 
 def knight():
-    pass
+    global x; global y; global mx; global my
+
+    if board[y][x] == " k ":
+        userinput = input("Write where you want to move: ")
+        move(userinput[0], userinput[-1])
+        if y < my:
+            if y + 1 == my:
+                 if x + 2 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                    and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                     board[y][x] = " . "
+                     board[my][mx] = " k "
+
+                 elif x - 2 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                    and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                     board[y][x] = " . "
+                     board[my][mx] = " k "
+                 else:
+                     print("Try something else")
+                     moves()
+
+            elif y + 2 == my:
+                if x + 1 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                     and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                    board[y][x] = " . "
+                    board[my][mx] = " k "
+
+                elif x - 1 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                    and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                    board[y][x] = " . "
+                    board[my][mx] = " k "
+                else:
+                    print("Try something else")
+                    moves()
+        elif y > my:
+            if y - 1 == my:
+                if x + 2 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                        and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                    board[y][x] = " . "
+                    board[my][mx] = " k "
+
+                elif x - 2 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                        and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                    board[y][x] = " . "
+                    board[my][mx] = " k "
+                else:
+                    print("Try something else")
+                    moves()
+            elif y - 2 == my:
+                if x + 1 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                     and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                    board[y][x] = " . "
+                    board[my][mx] = " k "
+
+                elif x - 1 == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                    and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+                    board[y][x] = " . "
+                    board[my][mx] = " k "
+                else:
+                    print("Try something else")
+                    moves()
+
+        boardprint()
+    else:
+        pass
+
+
