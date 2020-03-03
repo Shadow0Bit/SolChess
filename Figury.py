@@ -8,6 +8,7 @@ def moves():
     pawn()
     rook()
     knight()
+    bishop()
 
 def move(a, b):
     global mx
@@ -296,3 +297,5 @@ def knight():
         pass
 
 
+def bishop():
+    pass
