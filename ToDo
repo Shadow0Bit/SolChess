@@ -1,12 +1,12 @@
 Must be:
 - [X] Knight
-- [ ] Bishop
+- [X] Bishop
 - [ ] Queen
 - [ ] King
 - [ ] Black pieces
 - [ ] Add rounds
+- [ ] Try to do Classes/Clean Code
 - [ ] Chess AI (?)
 
 May may:
-- [ ] Try to do Classes
 - [ ] UI
