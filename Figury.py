@@ -9,6 +9,8 @@ def moves():
     rook()
     knight()
     bishop()
+    queen()
+    king()
 
 def move(a, b):
     global mx
@@ -417,3 +419,191 @@ def bishop(): # THIS IS TERRIBLE CODE, FIX IT LATER
         boardprint()
     else:
         pass
+
+
+def queen():    # It's just bishop and rook
+    global x; global y; global mx; global my
+
+    if board[y][x] == " q ":
+        userinput = input("Write where you want to move: ")
+        move(userinput[0], userinput[-1])
+        ay = y
+        ax = x
+        if mx == x and my != y:
+            if y < my:
+                a = y + 1
+                b = my + 1
+                c = 1
+            if y > my:
+                a = y - 1
+                b = my - 1
+                c = -1
+            for i in range(a, b, c):
+                if board[i][x] == " p " or board[i][x] == " r " or board[i][x] == " h " \
+                        or board[i][x] == " b " or board[i][x] == " q " or board[i][x] == " k ":
+                    if not li == y:
+                        board[li][x] = " q "
+                        board[y][x] = " . "
+                        break
+                    else:
+                        print("Try something else")
+                        moves()
+                elif board[i][x] == " . ":
+                    if i == my:
+                        board[i][x] = " q "
+                        board[y][x] = " . "
+                        break
+                    else:
+                        pass
+                else:
+                    board[i][x] = " q "
+                    board[y][x] = " . "
+                    break
+                li = i
+        elif mx != x and my == y:
+            if x < mx:
+                a = x + 1
+                b = mx + 1
+                c = 1
+            if x > mx:
+                a = x - 1
+                b = mx - 1
+                c = -1
+            for i in range(a, b, c):
+                if board[y][i] == " p " or board[y][i] == " r " or board[y][i] == " h " \
+                        or board[y][i] == " b " or board[y][i] == " q " or board[y][i] == " k ":
+                    if not li == x:
+                        board[y][li] = " q "
+                        board[y][x] = " . "
+                        break
+                    else:
+                        print("Try something else")
+                        moves()
+                elif board[y][i] == " . ":
+                    if i == mx:
+                        board[y][i] = " q "
+                        board[y][x] = " . "
+                        break
+                    else:
+                        pass
+                else:
+                    board[y][i] = " q "
+                    board[y][x] = " . "
+                    break
+                li = i
+        elif y > my:
+            if x > mx:
+                while True:
+                    ay -= 1
+                    ax -= 1
+                    if board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                            or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        mx = ax + 1
+                        my = ay + 1
+                        board[my][mx] = " q "
+                        board[y][x] = " . "
+                        break
+                    elif not board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                            or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        if ay == my and ax == mx:
+                            board[my][mx] = " q "
+                            board[y][x] = " . "
+                            break
+                        elif not board[ay][ax] == " . ":
+                            board[ay][ax] = " q "
+                            board[y][x] = " . "
+                            break
+                    else:
+                        print("Try something else")
+                        moves()
+            elif x < mx:
+                while True:
+                    ay -= 1
+                    ax += 1
+                    if board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                        or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        mx = ax - 1
+                        my = ay + 1
+                        board[my][mx] = " q "
+                        board[y][x] = " . "
+                        break
+                    elif not board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                        or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        if ay == my and ax == mx:
+                            board[my][mx] = " q "
+                            board[y][x] = " . "
+                            break
+                        elif not board[ay][ax] == " . ":
+                            board[ay][ax] = " q "
+                            board[y][x] = " . "
+                            break
+                    else:
+                        print("Try something else")
+                        moves()
+            else:
+                print("Try something else")
+                moves()
+        elif y < my:
+            if x > mx:
+                while True:
+                    ay += 1
+                    ax -= 1
+                    if board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                            or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        mx = ax + 1
+                        my = ay - 1
+                        board[my][mx] = " q "
+                        board[y][x] = " . "
+                        break
+                    elif not board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                            or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        if ay == my and ax == mx:
+                            board[my][mx] = " q "
+                            board[y][x] = " . "
+                            break
+                        elif not board[ay][ax] == " . ":
+                            board[ay][ax] = " q "
+                            board[y][x] = " . "
+                            break
+                    else:
+                        print("Try something else")
+                        moves()
+            elif x < mx:
+                while True:
+                    ay += 1
+                    ax += 1
+                    if board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                            or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        mx = ax - 1
+                        my = ay - 1
+                        board[my][mx] = " q "
+                        board[y][x] = " . "
+                        break
+                    elif not board[ay][ax] == " p " or board[ay][ax] == " r " or board[ay][ax] == " h " \
+                            or board[ay][ax] == " b " or board[ay][ax] == " q " or board[ay][ax] == " k ":
+                        if ay == my and ax == mx:
+                            board[my][mx] = " q "
+                            board[y][x] = " . "
+                            break
+                        elif not board[ay][ax] == " . ":
+                            board[ay][ax] = " q "
+                            board[y][x] = " . "
+                            break
+                    else:
+                        print("Try something else")
+                        moves()
+            else:
+                print("Try something else")
+                moves()
+
+        else:
+            print("Try something else")
+            moves()
+
+        boardprint()
+    else:
+        pass
+
+
+def king():
+    pass
