@@ -1,6 +1,7 @@
 from SolChess.Board import *
 
 
+# Check = | rook, Check2 = -- rook, Check3 = \ bishop, Check4 = / bishop, Check5 = \ pawn, Check52 = / pawm
 def kingcheck():
     for y in range(0, 8):
         try:
@@ -32,7 +33,7 @@ def kingcheck():
     for i in range(x + 1, 8):
         if board[y][i] == " R " or board[y][i] == " Q ":
             print("Check!")
-            check = 1
+            check2 = 1
             break
         elif board[y][i] == " . ":
             pass
@@ -42,13 +43,71 @@ def kingcheck():
     for i in range(x - 1, -1 , -1):
         if board[y][i] == " R " or board[y][i] == " Q ":
             print("Check!")
-            check = 1
+            check2 = 1
             break
         elif board[y][i] == " . ":
             pass
         else:
             print("NotCheck4")
             break
+
+    ax = x
+    for i in range(y + 1, 8):
+        ax += 1
+        if board[i][ax] == " B " or board[i][ax] == " Q ":
+            print("Check! B")
+            check3 = 1
+            break
+        elif board[i][ax] == " . ":
+            pass
+        else:
+            print("NotCheck1B")
+            break
+    ax = x
+    for i in range(y - 1, -1, -1):
+        ax -= 1
+        if board[i][ax] == " B " or board[i][ax] == " Q ":
+            print("Check! B")
+            check3 = 1
+            break
+        elif board[i][ax] == " . ":
+            pass
+        else:
+            print("NotCheck2B")
+            break
+    ax = x
+    for i in range(y + 1, 8):
+        ax -= 1
+        if board[i][ax] == " B " or board[i][ax] == " Q ":
+            print("Check! B")
+            check4 = 1
+            break
+        elif board[i][ax] == " . ":
+            pass
+        else:
+            print("NotCheck3B")
+            break
+    ax = x
+    for i in range(y - 1, -1, -1):
+        ax += 1
+        if board[i][ax] == " B " or board[i][ax] == " Q ":
+            print("Check! B")
+            check4 = 1
+            break
+        elif board[i][ax] == " . ":
+            pass
+        else:
+            print("NotCheck4B")
+            break
+    if y > 0 and x > 0:
+        if board[y - 1][x - 1] == " P ":
+            check5 = 1
+            print("Check! P")
+    if y > 0 and x < 7:
+        if board[y - 1][x + 1] == " P ":
+            check52 = 1
+            print("Check! P")
+
 
 def moves():
     kingcheck()
@@ -62,6 +121,7 @@ def moves():
     queen()
     king()
 
+# Move coordinate converter
 def move(a, b):
     global mx
     global my
@@ -102,7 +162,7 @@ def move(a, b):
     else:
         print("Try something else")
 
-
+# Position coordinate converter
 def position(a, b):
     global x
     global y
