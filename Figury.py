@@ -8,18 +8,46 @@ def kingcheck():
             break
         except:
             pass
-    for i in range(y, 8):
+    for i in range(y + 1, 8):
         if board[i][x] == " R " or board[i][x] == " Q ":
             print("Check!")
             check = 1
             break
-        elif board[i][x] != " . " and board[i][x] != " R " and board[i][x] != " Q ":
-            print("NotCheck")
+        elif board[i][x] == " . ":
+            pass
+        else:
+            print("NotCheck1")
             break
-    for i in range(y, -1 , -1):
+    for i in range(y - 1, -1 , -1):
         if board[i][x] == " R " or board[i][x] == " Q ":
             print("Check!")
             check = 1
+            break
+        elif board[i][x] == " . ":
+            pass
+        else:
+            print("NotCheck2")
+            break
+
+    for i in range(x + 1, 8):
+        if board[y][i] == " R " or board[y][i] == " Q ":
+            print("Check!")
+            check = 1
+            break
+        elif board[y][i] == " . ":
+            pass
+        else:
+            print("NotCheck3")
+            break
+    for i in range(x - 1, -1 , -1):
+        if board[y][i] == " R " or board[y][i] == " Q ":
+            print("Check!")
+            check = 1
+            break
+        elif board[y][i] == " . ":
+            pass
+        else:
+            print("NotCheck4")
             break
 
 def moves():
