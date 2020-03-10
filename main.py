@@ -1,3 +1,6 @@
-import SolChess.Figury as Figury
+import SolChess.Figury as w
+import SolChess.BlackPices as b
 
-Figury.moves()
+while True:
+    w.moves()
+    b.moves()

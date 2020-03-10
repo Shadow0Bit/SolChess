@@ -1,11 +1,11 @@
-board = [[" . ", " . ", " . ", " . ", " . ", " . ", " . ", " . "],  # 0
-         [" . ", " . ", " . ", " . ", " . ", " Q ", " . ", " . "],  # 1
+board = [[" R ", " H ", " B ", " Q ", " K ", " B ", " H ", " R "],  # 0
+         [" P ", " P ", " P ", " P ", " P ", " P ", " P ", " P "],  # 1
          [" . ", " . ", " . ", " . ", " . ", " . ", " . ", " . "],  # 2
-         [" . ", " . ", " . ", " p ", " k ", " X ", " . ", " . "],  # 3
-         [" . ", " . ", " . ", " . ", " X ", " . ", " Q ", " . "],  # 4
+         [" . ", " . ", " . ", " . ", " . ", " . ", " . ", " . "],  # 3
+         [" . ", " . ", " . ", " . ", " . ", " . ", " . ", " . "],  # 4
          [" . ", " . ", " . ", " . ", " . ", " . ", " . ", " . "],  # 5
          [" p ", " p ", " p ", " p ", " p ", " p ", " p ", " p "],  # 6
-         [" r ", " h ", " b ", " q ", " . ", " b ", " h ", " r "]]  # 7
+         [" r ", " h ", " b ", " q ", " k ", " b ", " h ", " r "]]  # 7
 
 
 def boardprint(): #Terrible board arrangement, you need to fix it later
@@ -17,4 +17,4 @@ def boardprint(): #Terrible board arrangement, you need to fix it later
             "3" + board[5][0] + board[5][1] + board[5][2] + board[5][3] + board[5][4] + board[5][5] + board[5][6] + board[5][7] + "\n"
             "2" + board[6][0] + board[6][1] + board[6][2] + board[6][3] + board[6][4] + board[6][5] + board[6][6] + board[6][7] + "\n"
             "1" + board[7][0] + board[7][1] + board[7][2] + board[7][3] + board[7][4] + board[7][5] + board[7][6] + board[7][7] + "\n"
-            "  a  b  c  d  e  f  g  h  ")
+            "  a  b  c  d  e  f  g  h  " + "\n \n")
