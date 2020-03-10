@@ -1,8 +1,10 @@
 from SolChess.Board import *
 
-
+check, check2, check3, check4, check5, check52 = 0, 0, 0, 0, 0, 0
 # Check = | rook, Check2 = -- rook, Check3 = \ bishop, Check4 = / bishop, Check5 = \ pawn, Check52 = / pawm
 def kingcheck():
+    global check; global check2; global check3; global check4; global check5; global check52
+
     for y in range(0, 8):
         try:
             x = board[y].index(" k ")    # Check King Position
@@ -54,6 +56,8 @@ def kingcheck():
     ax = x
     for i in range(y + 1, 8):
         ax += 1
+        if ax > 7 or ax < 0:
+            break
         if board[i][ax] == " B " or board[i][ax] == " Q ":
             print("Check! B")
             check3 = 1
@@ -90,6 +94,8 @@ def kingcheck():
     ax = x
     for i in range(y - 1, -1, -1):
         ax += 1
+        if ax > 7 or ax < 0:
+            break
         if board[i][ax] == " B " or board[i][ax] == " Q ":
             print("Check! B")
             check4 = 1
@@ -716,8 +722,69 @@ def queen():    # It's just bishop and rook
 
 
 def king():
-    global x; global y; global mx; global my
+    global x; global y; global mx; global my; global check; global check2; global check3; global check4; global check5; global check52
 
     if board[y][x] == " k ":
-        pass
+        userinput = input("Write where you want to move: ")
+        move(userinput[0], userinput[-1])
+        if x == mx and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                            and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
 
+            if y + 1 == my:
+                board[y][x] = " . "
+                s = board[my][mx]
+                board[my][mx] = " k "
+                kingcheck()
+                if check == 1 or check2 == 1 or check3 == 1 or check4 == 1 or check5 == 1 or check52 == 1:
+                    print("You can't move there")
+                    board[y][x] = " k "
+                    board[my][mx] = s
+                    check, check2, check3, check4, check5, check52 = 0, 0, 0, 0, 0, 0
+                    moves()
+            elif y - 1 == my:
+                    board[y][x] = " . "
+                    s = board[my][mx]
+                    board[my][mx] = " k "
+                    kingcheck()
+                    if check == 1 or check2 == 1 or check3 == 1 or check4 == 1 or check5 == 1 or check52 == 1:
+                        print("You can't move there")
+                        board[y][x] = " k "
+                        board[my][mx] = s
+                        check, check2, check3, check4, check5, check52 = 0, 0, 0, 0, 0, 0
+                        moves()
+            else:
+                print("You can't move there, try sth else")
+                moves()
+        elif y == my and board[my][mx] != " p " and board[my][mx] != " r " and board[my][mx] != " h " \
+                            and board[my][mx] != " b " and board[my][mx] != " q " and board[my][mx] != " k ":
+            if x + 1 == my:
+                board[y][x] = " . "
+                s = board[my][mx]
+                board[my][mx] = " k "
+                kingcheck()
+                if check == 1 or check2 == 1 or check3 == 1 or check4 == 1 or check5 == 1 or check52 == 1:
+                    print("You can't move there")
+                    board[y][x] = " k "
+                    board[my][mx] = s
+                    check, check2, check3, check4, check5, check52 = 0, 0, 0, 0, 0, 0
+                    moves()
+            elif x - 1 == my:
+                    board[y][x] = " . "
+                    s = board[my][mx]
+                    board[my][mx] = " k "
+                    kingcheck()
+                    if check == 1 or check2 == 1 or check3 == 1 or check4 == 1 or check5 == 1 or check52 == 1:
+                        print("You can't move there")
+                        board[y][x] = " k "
+                        board[my][mx] = s
+                        check, check2, check3, check4, check5, check52 = 0, 0, 0, 0, 0, 0
+                        moves()
+            else:
+                print("You can't move there, try sth else")
+                moves()
+
+        else:
+            print("You can't move there, try sth else")
+            moves()
+
+        boardprint()
