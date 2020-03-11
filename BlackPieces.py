@@ -213,7 +213,7 @@ def pawn():
                 if y == 1 and my == 3:
                     for i in range(y + 1, 4):
                         if board[i][x] == " . ":
-                            board[i][x] = " p "
+                            board[i][x] = " P "
                             i -= 1
                             board[i][x] = " . "
                         else:
@@ -223,13 +223,13 @@ def pawn():
                                 moves()
                             else:
                                 board[y][x] = " . "
-                                board[i][x] = " p "
+                                board[i][x] = " P "
                                 break
                 else:
                     i = y + 1
                     if board[i][x] == " . " and i == my:
                         board[y][x] = " . "
-                        board[i][x] = " p "
+                        board[i][x] = " P "
                     else:
                         print("Try something else")
                         moves()
@@ -239,12 +239,12 @@ def pawn():
             if ay == my:
                 ax = x + 1
                 if mx == ax:
-                    board[my][mx] = " p "
+                    board[my][mx] = " P "
                     board[y][x] = " . "
                 else:
                     ax = x - 1
                     if mx == ax:
-                        board[my][mx] = " p "
+                        board[my][mx] = " P "
                         board[y][x] = " . "
                     else:
                         print("Try something else")
@@ -263,7 +263,7 @@ def rook():
 
     if board[y][x] == " R ":
         userinput = input("Write where you want to move: ")
-        move(userinput[0], userinput[-1])
+        (userinput[0], userinput[-1])
         if mx == x and my != y:
             if y < my:
                 a = y + 1
