@@ -1,4 +1,4 @@
-from SolChess.Board import *
+from Board import *
 
 check, check2, check3, check4, check5, check52 = 0, 0, 0, 0, 0, 0
 # Check = | rook, Check2 = -- rook, Check3 = \ bishop, Check4 = / bishop, Check5 = \ pawn, Check52 = / pawm
