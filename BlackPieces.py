@@ -233,16 +233,16 @@ def pawn():
                     else:
                         print("Try something else")
                         moves()
-        elif x != mx and y > my and board[my][mx] != " P " and board[my][mx] != " R " and board[my][mx] != " H " \
+        elif x != mx and y < my and board[my][mx] != " P " and board[my][mx] != " R " and board[my][mx] != " H " \
                     and board[my][mx] != " B " and board[my][mx] != " Q " and board[my][mx] != " K ":
             ay = y + 1
             if ay == my:
-                ax = x + 1
+                ax = x - 1
                 if mx == ax:
                     board[my][mx] = " P "
                     board[y][x] = " . "
                 else:
-                    ax = x - 1
+                    ax = x + 1
                     if mx == ax:
                         board[my][mx] = " P "
                         board[y][x] = " . "
