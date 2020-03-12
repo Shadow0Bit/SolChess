@@ -109,6 +109,7 @@ def moves():
     bishop()
     queen()
     king()
+    checkifdot()
 
 # Move coordinate converter
 def move(a, b):
@@ -783,3 +784,9 @@ def king():
     else:
         pass
 
+def checkifdot():
+    global x
+    global y
+    if board[y][x] == " . ":
+        print("Try something else")
+        moves()

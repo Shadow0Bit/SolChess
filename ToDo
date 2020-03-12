@@ -4,8 +4,9 @@ Must be:
 - [X] Queen
 - [X] King
 - [X] Black pieces
-- [ ] Add rounds
-- [ ] Try to do Classes/Clean Code
+- [X] Add rounds
+- [LATER] Try to do Classes/Clean Code
+- [ ] Minimax algorithm
 - [ ] Chess AI (?)
 
 May may:

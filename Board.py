@@ -8,7 +8,7 @@ board = [[" R ", " H ", " B ", " Q ", " K ", " B ", " H ", " R "],  # 0
          [" r ", " h ", " b ", " q ", " k ", " b ", " h ", " r "]]  # 7
 
 
-def boardprint(): #Terrible board arrangement, you need to fix it later
+def boardprint():
     print(  "8" + board[0][0] + board[0][1] + board[0][2] + board[0][3] + board[0][4] + board[0][5] + board[0][6] + board[0][7] + "\n"
             "7" + board[1][0] + board[1][1] + board[1][2] + board[1][3] + board[1][4] + board[1][5] + board[1][6] + board[1][7] + "\n"
             "6" + board[2][0] + board[2][1] + board[2][2] + board[2][3] + board[2][4] + board[2][5] + board[2][6] + board[2][7] + "\n"
