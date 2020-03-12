@@ -101,15 +101,17 @@ def kingcheck():
 def moves():
     kingcheck()
     boardprint()
+    print("It's black turn (uppercase letters)")
     userinput = input("Write coordinates of the piece you want to move: ")
     position(userinput[0], userinput[-1])
+    checkifdot()
     pawn()
     rook()
     horse()
     bishop()
     queen()
     king()
-    checkifdot()
+
 
 # Move coordinate converter
 def move(a, b):
@@ -790,3 +792,5 @@ def checkifdot():
     if board[y][x] == " . ":
         print("Try something else")
         moves()
+    else:
+        pass
