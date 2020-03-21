@@ -5,7 +5,7 @@ def black_possible_moves():
     for y in range(0, 8):
         for x in range(0, 8):
             if board[y][x] == " K ":
-                king_move = board[y + 1][x]
+                king_move = board[y + 1][x]     # str(y+1) + str(x) = yx
                 king_move2 = board[y - 1][x]
                 king_move3 = board[y][x + 1]
                 king_move4 = board[y][x - 1]
