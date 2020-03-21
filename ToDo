@@ -7,7 +7,8 @@ Must be:
 - [X] Add rounds
 - [LATER] Try to do Classes/Clean Code
 - [ ] Minimax algorithm
-- [ ] Chess AI (?)
+    - [ ] n=0 n=4 etc.
+- [ ] TF AI (?)
 
 May may:
 - [ ] UI
