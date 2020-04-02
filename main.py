@@ -1,6 +1,6 @@
-import WhitePieces as w
-import BlackPieces as b
-from Board import *
+import SolChess.WhitePieces as wp
+import SolChess.BlackPieces as bp
+from SolChess.Board import *
 
 print("SolChess \nprototype \nv1.0\n")
 checkB, checkW = 1, 1
@@ -10,6 +10,7 @@ def selectmode():
 
     select = input("How do you want to play? \nWrite f to play with friend or write AI to play with AI: ")
     if select == "f" or select == "F":
+        boardprint()
         while True:
             checkmate()
             if checkB == 0:
@@ -19,7 +20,8 @@ def selectmode():
                 print("Black has won the game!")
                 break
 
-            w.moves()
+            wp.moves()
+            boardprint()
 
             checkmate()
             if checkB == 0:
@@ -29,7 +31,8 @@ def selectmode():
                 print("Black has won the game!")
                 break
 
-            b.moves()
+            bp.moves()
+            boardprint()
 
     elif select == "AI" or select == "ai":
         print("You fool, there is no AI mode yet")
@@ -39,9 +42,9 @@ def selectmode():
 
 
 def checkmate():
-    global checkB;
+    global checkB
     global checkW
-    for i in range(0, 7):
+    for i in range(0, 8):
         try:
             board[i].index(" K ")
             checkB = 1
@@ -49,14 +52,12 @@ def checkmate():
         except:
             checkB = 0
 
+    for i in range(0, 8):
         try:
             board[i].index(" k ")
             checkW = 1
             break
         except:
             checkW = 0
-
-
-
 
 selectmode()
