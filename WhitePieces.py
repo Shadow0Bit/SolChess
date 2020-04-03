@@ -1,4 +1,4 @@
-from SolChess.Board import *
+from Board import *
 
 R, H, B, Q, K, B2, H2, R2 = " R ", " H ", " B ", " Q ", " K ", " B ", " H ", " R "
 P1, P2, P3, P4, P5, P6, P7, P8 = " P ", " P ", " P ", " P ", " P ", " P ", " P ", " P "

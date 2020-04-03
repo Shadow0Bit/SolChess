@@ -1,6 +1,6 @@
-import SolChess.WhitePieces as wp
-import SolChess.BlackPieces as bp
-from SolChess.Board import *
+import WhitePieces as wp
+import BlackPieces as bp
+from Board import *
 
 print("SolChess \nprototype \nv1.0\n")
 checkB, checkW = 1, 1

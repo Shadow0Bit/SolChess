@@ -1,4 +1,4 @@
-from SolChess.Board import board
+from Board import board
 
 aiboard = [["R", "H", "B", "Q", "K", "B2", "H2", "R2"],  # 0
          ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"],  # 1
