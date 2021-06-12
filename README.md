@@ -1,7 +1,7 @@
 # SolChess
-~~Professional~~ **Terribly coded** Chess Engine
+~~Professional~~ **Terribly coded** Chess
  
-SolChess is the most powerful chess engine that you had ever seen,
+SolChess is the most powerful chess program that you had ever seen,
 we were working on it for years and finally you can use it for free.
 Written in Python 3.8.
 
